@@ -1,3 +1,75 @@
 <h1>
-  {{title}}
+  {{title | uppercase}}
 </h1>
+
+<app-users></app-users>
+
+<h1>
+  {{title | lowercase}}
+</h1>
+
+<h2>
+  {{day}}
+  </h2>
+ 
+  <h2>
+  {{day | date}}
+  </h2>
+
+  <h2>
+  {{day | date:'shortDate'}}
+  </h2>
+
+  <h2>
+    {{day | date:'fullDate'}}
+    </h2>
+
+    <h2>
+    {{day | date:'fullDate' | uppercase}}
+    </h2>
+
+    {{arr | sort:'ascending'}}
+
+<a routerLink="/my-login">my-login</a>
+<a routerLink="/users">users</a>
+<br>
+<router-outlet></router-outlet>
+<br>
+{{obj.name}}
+<br>
+<ul>
+    <li *ngFor= " let i of arr">{{i}}</li>
+    </ul>
+    <p *ngIf= "isTrue">Hello</p>
+    
+ <p *ngIf= "myName=='moin'">True</p>
+
+ <div class="main">
+   <h1>Item's List</h1>
+   <div class="addItem">
+     <input [(ngModel)]="newItem" placeholder="Add Item" class="addText">
+     <button (click)="pushItem()">Add</button>
+     <div>
+       <ul>
+         <li *ngFor= "let i of items; let ind=index">
+           {{i}}
+           <span (click)= "removeItem(ind)">x</span>
+         </li>
+      </ul>
+
+      <br>
+      <br>
+      <br>
+      <form class="container">
+      <input type="text" name="firstname" placeholder="firstname" >
+      <br>
+      <input type="text" name="lastname" placeholder="lastname" >
+     <br>
+     <select name ="languages">
+       <option value="C++">C++</option>
+       <option value="java">java</option>
+       <option value="angular">angular</option>
+       </select>
+       <br><br>
+       <input type="submit" value="submit">
+       </form>
